@@ -1,5 +1,5 @@
-## Notebook Workflow Picture
-I asked Claude to analyse the code in this notebook. He drew this lovely picture to show how the notebook works.
+## Notebook Workflow Visualised
+I asked Claude to analyse the code in this notebook and then visualise how it works. Here it is:
 
 ```mermaid
 graph TD
