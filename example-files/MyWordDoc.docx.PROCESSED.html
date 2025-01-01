@@ -1,0 +1,164 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Corrected Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0 5%;
+            max-width: 50em;
+            line-height: 1.5em;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 16px;
+            background-color: #F0EFEA;
+            color: #141413;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0 3%;
+            }
+        }
+
+        strong {
+            color: #E46264;
+        }
+    </style>
+    
+    </head>
+    <body>
+        <h1>🟡 A Story with Claude &amp; Usage</h1>
+<h2>What this Notebook does</h2>
+<p>Elevate your Word document with AI-powered <strong>proofreading</strong> that goes beyond standard spell-check. This notebook uses Anthropic's <strong>AI</strong> to scan your Word documents, catching subtle language and style errors that slip past Microsoft Word. Whether you're writing in English, German, Italian, or French, it preserves your intended meaning while polishing your prose to perfection—even for very large documents.</p>
+<p><strong><del>Elevate your Word document with AI-powered proof feeding that goes beyond standard spell-check.</del></strong></p>
+<p>This notebook also <strong>serves</strong> as a <strong>demo</strong>. It showcases how Claude can help create tools - like this very notebook - with little coding <strong>skill</strong> and no idea of where to start. I am a product manager by profession, and without Claude next to me, I would never have built this.</p>
+<h2>Notebook Usage</h2>
+<p>Usage – To Fix Your Word Document</p>
+<p>You don't need to know how to code<strong>;</strong> all you need <strong>to do</strong> is set two variables in the <strong>Notebook</strong> section <strong>"</strong>Set your variables<strong>"</strong>. To run the Notebook, you will need an Anthropic Pro account ($20/month) and at least $0.05 credit in your workbench along with an Anthropic API key.</p>
+<p>No Anthropic Pro account?</p>
+<p>No <strong>problem</strong>. Each code block is followed by an example output, allowing you to see how the notebook works without running it yourself. Start by <strong>scanning</strong> the Table of Contents to see where we're <strong>going</strong> and then focus on the explanations between code blocks – you don't have to read the <strong>code</strong>.</p>
+<h2>How this Notebook came about</h2>
+<p>This project fell into my lap <strong>yesterday</strong> over a Sunday lunch that I wasn't at. My sister's friend was wrapping up her research paper - a hefty 40,000-word beast in German. With the deadline looming, she was spending too much time looking for mistakes Word had missed.</p>
+<p>So, I <strong>decided</strong> to create this Notebook to use Claude to correct Word documents. What makes it different from using the normal Claude chat interface is that the entire document gets corrected, and the corrections are easy to spot as I've made them in colour. </p>
+<p>Did I know how to build something like this? No. But I surmised (correctly) that with Claude's help I could figure it out. And that's really what this project is about - showing just how powerful Claude is when you don't know how to do something, even when you're not a coding wizard.</p>
+<h2>Claude as a Partner: A Non-Coder's Adventure in AI Development</h2>
+<p>As I mentioned earlier, I'm a product manager by trade with no heavyweight coding skills to speak of. Out of my depth<strong>,</strong> I sought guidance from an online Slack community. Two strangers, Unmesh and Aaron, generously allowed me to call them. Unmesh validated my <strong>stick-man</strong> concept, while Aaron inspired my "Evaluate the document" section. Both calls gave me the confidence <strong>to know</strong> that with persistence I could do this.</p>
+<p>I then turned to Claude as my AI co-creator for this Notebook. This marked <strong>the</strong> move from concept to development. Claude became my constant companion, sitting beside me every day in my browser. I created a dedicated <a href="https://support.anthropic.com/en/articles/9517075-what-are-projects">project in my Anthropic account</a> for our chats and gave Claude specific instructions to optimise our collaboration:</p>
+<p>Collaborating with Claude was crucial in every aspect of developing this Notebook. Here are <strong>a</strong> handful <strong>of</strong> examples:</p>
+<ul>
+<li>Problem-solving: Claude helped me visualize the solution (see the flowchart below)</li>
+<li>Technical guidance: Suggested Python libraries to streamline the coding process.</li>
+<li>API integration: Provided instructions for connecting to Claude programmatically.</li>
+<li>Code development: Wrote about 80% of the code and helped refactor (improve) it.</li>
+<li><strong><del>Wrote about 80% of the code and helped refactor (improve) it.</del></strong></li>
+<li>Testing: Generated test data for prompt testing (see "Test my prompt" section).</li>
+</ul>
+<p>Here<strong>'s</strong> the picture he drew for me on how we could tackle this Notebook:</p>
+<p>[pic question to generate the plan flow]</p>
+<p>I learnt an enormous amount, especially when I argued with Claude. I'm a much better coder now too. You probably shouldn't have <strong><del>thought</del></strong> <strong>thought</strong> so, but <strong>he</strong> explained so much to me. Discussing concepts before diving into syntax made the coding process much easier and faster.</p>
+<p>If you are new to AI development, don't be <strong>sad</strong>. When I started this project, I was starting far from square one, just as you might be. Everything I've learned came from my interactions with Claude. This Notebook is a testament to the power of AI-assisted learning (and code generation).</p>
+<h2>Who this Notebook was written for</h2>
+<p>Someone with a Word document: <strong><del>that</del></strong> <strong>who</strong> needs correction beyond what Word provides. In this case, you don't need to read anything. Just run the Notebook, look at the "Evaluate the document" results, and the final corrected document.</p>
+<p>The Curious Beginner: If you're feeling like I was at the beginning of this project - knowing it is possible to programmatically use Claude but unsure where to begin - this Notebook is for you.</p>
+<p>For People Good at Coding: This Notebook showcases Claude's coding capabilities. About 80% of this Notebook <strong><del>were</del></strong> <strong>was</strong> coded by Claude in response to my unsophisticated questions. Yes, there was a lot of back and forth and refactoring, but say what you will, someone who knew very little still built something that works.</p>
+<p>And lastly, for my sister: Whose definition of AI was Canva and now <strong><del>happy</del></strong> <strong>happily</strong> Claude too. I know you won't make it this far, but here's hoping anyway.</p>
+<h1>🟣 Setup</h1>
+<h2>Python Libraries</h2>
+<p>Before I dive into actually "doing the work", first I need to install and import the Python libraries this Notebook will use. Libraries are code written by other people which means there's less code for me to write. Many of these libraries were either suggested by Claude or I found them with Google.</p>
+<p>Install all required libraries if they aren't already:</p>
+<p>Import specific library components that I'll use in this Notebook.</p>
+<p>For example, in <code>from langchain.text_splitter import MarkdownTextSplitter</code> I'm importing the MarkdownTextSplitter class from the text_splitter submodule of the larger langchain library. Confused? Don't worry, think of it like this:</p>
+<ul>
+<li>A library is a collection of pre-written code like a toolbox, </li>
+<li>A submodule is a separate file or directory within that library (like a compartment in the toolbox), </li>
+<li>A class is a blueprint for creating objects with specific features and behaviours</li>
+</ul>
+<h1>🟣 Split Word doc into chunks</h1>
+<p>I initially thought I could simply send your entire Word document to Claude for correction. However, when using Claude programmatically this is not possible. Here's the approach I devised in conversation with Claude<strong><del>. this is not possibel. Here's the approach I devized in conversation with Claude</del></strong>:</p>
+<ul>
+<li>Extract the text from your Word document</li>
+<li>Convert it into markdown format</li>
+<li>Split the Markdown text into smaller <strong><del>peace</del></strong> <strong>pieces</strong> (which I'll call "chunks")</li>
+</ul>
+<p>Once these steps are complete, I can send each chunk to Claude for processing - in our case, this means getting Claude to correct each text chunk and send it back to me. <strong><del>We gone</del></strong> <strong>We're going to</strong> use this method to <strong><del>insure</del></strong> <strong>ensure</strong> the whole document gets fixed.</p>
+<h2>Extract Word doc</h2>
+<p>In this first step, I extract the text from your Word document. Because I want to maintain the same headings<strong>,</strong> bullet lists, and paragraphs as your Word document, my code tracks the 'Word style' of each paragraph. For simplicity, I ignored everything else like text found in tables, images, charts, headers and footers.</p>
+<p>The output of the code below shows a summary of the paragraphs that were extracted from your Word document.</p>
+<h2>Split into chunks</h2>
+<p>Now that I've converted all the extracted text from your Word document into one markdown file, we're onto splitting this file into little chunks. So instead of one big file, I might end up with<strong>,</strong> say, 12 chunks that, if joined back together, would be identical to the markdown file. I do this so I can send these smaller chunks to Claude for correction, one by one.</p>
+<p>You might wonder, "Why not just send everything at once?" I think the same. Claude has a limit on how much text it can send back in reply to any prompt. If I sent all the markdown text at once, <strong>many contents would</strong> be left out in Claude's corrected reply.</p>
+<p>Small chunks are also quite <strong>useful</strong>. They make it easy to compare the "original chunk" with the "processed chunk" I get back from Claude. For instance, I can quickly spot if the semantic meaning of the corrected chunk changed compared to the original chunk. It's much easier to notice oddities with little chunks than one enormous chunk. Plus, if something goes wrong, I'd rather have a small chunk fail than the entire document.</p>
+<p>In the output of the code below<strong>,</strong> you can see a summary of the chunks your Word document <strong>was</strong> split into. The number of chunks is determined by the target chunk size I set. More on that below. But feel free to skip it entirely.</p>
+<p>Why I chunked with characters (not tokens)</p>
+<p>I chose to split the text into chunks based on character count rather than tokens. For instance, "split the document into chunks each about 1,000 characters long." It's a bit of a rabbit hole, but if you're curious as to why I chose characters (instead of tokens), here's the exploration:</p>
+<p>First, let's talk about "tokens." They're just a way to measure text size, like kilograms measure a person's weight. But here's the twist: while a kilogram is the same everywhere, tokens aren't. Each large language model has its own way of counting text size using <strong>its</strong> own "tokeniser". So "87 Anthropic Claude tokens" isn't the same amount of text as "87 OpenAI GPT tokens". Language models don't measure the size of text by counting words or characters like we do.</p>
+<p>Given that Claude is limited to replying with no more than 4,096 "Anthropic tokens", it would obviously make sense to split text by counting tokens. So why did I use characters instead?</p>
+<p>I got a bit lazy. My text is in Markdown format, and I didn't want to break apart Markdown elements accidentally when splitting the text into chunks. I found a library that splits Markdown text while respecting its structure. The problem is that this library only allows me to specify target chunk size in characters (not tokens). Still, I thought it better to do a workaround than to write my own code to split markdown text. I thought doing rough math estimates <strong>was</strong> easier.</p>
+<p>How I determined my target chunk size (in characters)</p>
+<p>To determine my ideal chunk size (in characters)<strong>,</strong> first I got my bearings on counting tokens, characters, and words on some random text using the Anthropic Tokeniser and Python.</p>
+<p>Then I did some math:</p>
+<ul>
+<li>Claude can return a maximum of 4,096 tokens per chunk</li>
+<li>My equation: (prompt size) + (chunk size) + (wiggle room for corrections) &lt;= 4,096 tokens</li>
+<li>Anthropic's tokeniser measured my prompt (without a chunk attached) at 405 tokens. </li>
+<li>I decided 500 tokens for correction wiggle room would be enough.</li>
+<li>So: (405 tokens) + (chunk size) + (500 tokens) &lt;= 4,096 tokens</li>
+<li>This means that my chunk size must be no more than 3,191 tokens</li>
+</ul>
+<p>And now using the data above to approximate:</p>
+<p>3,191 tokens x 5.89 characters = 18,795 characters</p>
+<p>But hold on, 18,795 characters in English is about 2,565 words which is 5 pages in Microsoft Word. I want smaller chunks to pinpoint subtle changes more easily. In my prompt<strong>,</strong> I instruct Claude to "make corrections but retain original meaning." Having smaller chunks to compare means I can plan changes in meaning with more sensitivity.</p>
+<p>I <strong>chose</strong> 4,000 characters as my target chunk size because this is about 545 words (just less than one page in Word) and about (4,000/5.89) 679 Anthropic tokens. Remember my wiggle of 500 tokens? This is about 400 words which is more than enough as I'm only sending Claude 545 words for correction <strong>anyway</strong>.</p>
+<p>My numbers are rough approximations using the sample analysis data above. But with a target chunk size of 4,000 characters (or 679 tokens)<strong>,</strong> there <strong>are</strong> 2,512 tokens of room left anyhow<strong>.</strong></p>
+<p>So: (405 tokens) + (chunk size: 679 tokens) + (500 tokens) &lt;= 4,096 tokens</p>
+<p>The only downside I see is a little more cost. Costs for API usage <strong>are</strong> calculated based on the number of tokens used, not per prompt. Because I'm sending more prompts than I need to, it just means I'm sending 405 (i.e., the prompt measured without the chunk) tokens more times than I have to. That's okay.</p>
+<p>In the output of the code below, you'll see a summary of how your Word document got chunked. You'll also see that my <strong>maths</strong> <strong>aren't</strong> all that bad.</p>
+<h1>🟣 Prompt Claude to correct chunks</h1>
+<h2>Show Prompt with example chunk</h2>
+<h2>Access Claude via API</h2>
+<p>If there <strong>were</strong> <strong>a</strong> part that scared me the most about attempting this Notebook, it's this part. I've always struggled with reading and understanding API documentation<strong>. API</strong> stands for "Application Programming Interface" -- in our case<strong>,</strong> the "application" is Claude, and "programming interface" means I'm using my Python program (i.e.<strong>,</strong> this Notebook) to call Claude.</p>
+<p>To get around my nerves, I told Claude that he is an expert on the latest Anthropic API. I also gave him the latest Python API documentation I downloaded from Anthropic's website and told him to educate himself deeply. I did this because the Claude model I'm using was last updated in June, and there has been an API update since then that Claude wouldn't be aware of. Finally, I asked him to write the code to connect to the Claude model. I pasted his code below and hit run. That's it. Claude replied and I did a happy dance to be sure.</p>
+<h2>Process Chunks</h2>
+<p>Let's summarize where we are so far. We've extracted the text from your Word document, we've converted it into a markdown file, we've split that file into chunks of markdown text, and we've established we can connect to Claude using the Anthropic API.</p>
+<p>In this step<strong>,</strong> I send each chunk one by one, embedded into the prompt, to Claude. The prompt instructs Claude to make corrections to the text. For each chunk, Claude then processes it and sends the corrected chunk back to me. I collect these chunks back in order because I'm going to join them all <strong>together</strong> again into one big document.</p>
+<p>The code is quite long but only because I went to town on error handling and friendly error messages. I did this because I can never understand error messages, so at least now mine are friendly. I also put in a fancy progress bar to keep you entertained while the chunks are processing.</p>
+<h1>🟣 Show word doc corrections prettily</h1>
+<p>At this stage, I've sent all the text chunks extracted from your Word document to Claude. He's processed each as per the instructions in the prompt and sent them back to me. The result of the two steps below is to enable you to see your entire Word document along with colourful corrections in your browser.</p>
+<h2>Reassemble processed chunks</h2>
+<p>This step is straightforward, just join the processed chunks back together. Since I collected the processed chunks from Claude in the same order I sent them, they fit right back into their original spots, following the flow of your Word document. The result? One big markdown file containing all the corrected text. It's essentially your original document, but with Claude's corrections neatly incorporated.</p>
+<h2>Create a pretty HTML file</h2>
+<p>Now that I have a markdown <strong>file</strong> that contains all the <strong>completed</strong> chunks, we're ready for this step. I convert this file into an HTML file so it looks prettier for you and it's easier to spot the corrections. All corrections are both bold and, now thanks to HTML, can also be in colour. The original scaffolding of your Word document has also been maintained. In terms of output, once the below code has run, we're done. Enjoy your corrections Word likely didn't pick up. They're all easily visible in the HTML file that you can open in your browser. </p>
+<p>But my work isn't done. I'm onto testing: the output file, my prompt itself, and my code.</p>
+<h1>🟤 Check corrected document</h1>
+<p>At this point, we have two very useful collections: the first contains all the original chunks before we sent them to Claude. The second contains all the corrected chunks that were processed and corrected by Claude. I tested my prompt, and the results were quite stable in retaining original meaning. However, I still wanted an automated way to know this for every Word document corrected.</p>
+<p>So, I set up three different ways to evaluate the corrected text against <strong>the</strong> original text. These provide automated confidence that Claude has enhanced your writing without changing <strong>its</strong> core message, structure, or content.</p>
+<p>Here's what I'm checking:</p>
+<ul>
+<li>Document structure: Are the headings and paragraphs still in the right place?</li>
+<li>Document content: Word count – has the overall length changed dramatically?</li>
+<li>Document content: Semantic meaning – does the corrected text still mean the same as the original? </li>
+</ul>
+<p>Each section below will go into more detail. </p>
+<p>"Michelle<strong>,</strong> you are making <strong>this</strong> overkill," I hear you saying. I quite disagree, and here's why:</p>
+<p>Imagine I decide to switch to the free Meta Llama 3.1 model instead of Claude Sonnet. How would I know if it's performing as well as Claude did? What if I have 20 large Word documents to correct? It wouldn't be practical to manually check each one.</p>
+<p><strong><del>Imagine I decide to switch to the free Meta Llama 3.1 model instead of Claude Sonnet.</del></strong></p>
+<p>Moreover, even if I stick with Claude, how can I be sure <strong>he'll</strong> perform equally well in Italian as he does in English? And just because I've thoroughly tested one document, does that guarantee the same level of performance for all others?</p>
+<p>Manually testing for all these scenarios would be incredibly time-consuming. That's why these automated tests, checks, or evaluations (whatever you want to call them) are so important to me. They save a tremendous amount of time and provide consistent, reliable results for every Word document I correct, regardless of its size or language. With very little effort, I can now have confidence in the quality of corrections across a wide range of documents and potential future changes.</p>
+<h2>Document <strong>Structure</strong> Preservation</h2>
+<p>This checks whether the overall structure of your Word document, like headings and bullet lists, remains intact in the corrected document. It's like making sure the <strong>skeletons</strong> <strong>haven't</strong> been rearranged. Keep in mind that Claude might <strong>combine</strong> some paragraphs while he's doing <strong>corrections</strong>. For example, if you accidentally started a new paragraph mid-sentence in your Word document, Claude would probably fix that. So don't judge an imperfect match too harshly. It's just an indication that something <strong>has</strong> changed. Overall, I don't expect that too much will change. This is what I am checking.</p>
+<h2>Document Content Preservation: <strong>Word Count</strong></h2>
+<p>Here, I do a quick comparison of word counts. If there's a big difference between the original and processed word count from Claude, it might mean the content has <strong>changed</strong> too much. It's a simple but effective first check that helps us spot any major unexpected changes in content. If you do see something unexpected, then it's a flag to go and look. Overall, here too, I don't expect word count to change by a lot, and this is what I am checking.</p>
+<h2>Document Content Preservation: <strong>Meaning</strong></h2>
+<p><strong><del>2</del></strong> This is the most sophisticated check of the three, diving into the actual semantic meaning of the text. There are many ways to measure text similarity. It sent me down another rabbit hole with many conflicting conversations with quite a few people. I've chosen to use the sentence-transformers library, which loads a language model that I selected to understand and compare text meaning.</p>
+<h1>🟤 <strong>Test My Prompt</strong></h1>
+<p>Creating the perfect instructions (or "prompt") for Claude is a mix of creativity and precision. It took me quite a bit of trial and error <strong>in</strong> refining the prompt to get Claude <strong>to</strong> perform <strong>as</strong> I wanted <strong>it</strong> to. As I was tweaking my prompt, I kept manually retesting the same things. That is why I wrote these tests -- to automate my manual tests so I could tweak faster with more confidence. They send example chunks to Claude to ensure that no matter the tweak, <strong>it</strong> is still doing the very specific things I care about, like correcting inappropriate word choice or bolding a correction using markdown format.</p>
+<p>For more encompassing testing, of both Claude prompt and code together, see <strong>the</strong> section 'Evaluate the output file.' In these prompt tests, I isolate the testing to only the prompt. None of my other code is involved in any <strong>way</strong>. That was important.</p>
+<p>You'll see in the output below that there are two failing tests. Try as I might, I just couldn't get Claude to consistently detect British English from American English and do corrections in the detected variant. As someone who prefers the Queen's English, I spent a lot of time trying to craft the prompt so Claude would get this right every time. Finally, I gave up and removed all associated guidelines. American English it is.</p>
+    </body>
+    </html>
+    
