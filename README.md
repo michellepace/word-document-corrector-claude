@@ -2,6 +2,8 @@
 
 A Google Colab notebook that leverages Claude (Anthropic API) to correct Microsoft Word documents far beyond Word's standard spelling and grammar checks. Simply upload your .docx file and get detailed corrections in colour. 
 
+I had close to no idea how to build this notebook when I started. It is written in a story telling style of my collaboration with Claude to get it done. Although the tool itself is useful, what was more significant to me was just the magnitude of possibility with AI assistance. I learnt and incredible amount, with Claude.
+
 ## Features
 - Deep language correction beyond Word's capabilities
 - Fixes grammar, spelling, and improves word choice
@@ -12,9 +14,8 @@ A Google Colab notebook that leverages Claude (Anthropic API) to correct Microso
 - Comprehensive testing suite to ensure correction integrity
 
 ## Notebook Usage
-1. Open [word-document-corrector-claude.ipynb](word-document-corrector-claude.ipynb)
-2. Select 'Open in Colab'
-3. Follow these steps in section 'Notebook Usage⭐'
+1. Click <a href="https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+1. Then follow these steps in section 'Notebook Usage⭐'
 
 ## Example Files
 To get a view of what corrections this Notebook makes, view the below files. What is interesting too is to open the input file in Word and see how many corrections it missed compared to the Output file from the notebook.
