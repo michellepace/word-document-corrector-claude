@@ -1,8 +1,6 @@
 # Word Document Corrector using Claude
 
-A Google Colab notebook that leverages Claude (Anthropic API) to correct Microsoft Word documents far beyond Word's standard spelling and grammar checks. Simply upload your .docx file and get detailed corrections in colour. 
-
-I had close to no idea how to build this notebook when I started. It is written in a story telling style of my collaboration with Claude to get it done. Although the tool itself is useful, what was more significant to me was just the magnitude of possibility with AI assistance. I learnt and incredible amount, with Claude.
+A Google Colab notebook that leverages Claude 3.5 Sonnet (Anthropic API) to correct Microsoft Word documents far beyond Word's inbuilt capabilities. Simply upload your .docx file and get detailed corrections in colour. 
 
 ## Features
 - Deep language correction beyond Word's capabilities
