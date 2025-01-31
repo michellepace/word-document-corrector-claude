@@ -4,8 +4,8 @@ A Google Colab notebook that uses Claude 3.5 Sonnet (Anthropic API) to correct M
 
 ## Notebook Usage
 1. Click <a href="https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-1. Then follow these steps in section 'Notebook Usage⭐'
-2. 
+1. Then follow these steps in section [Your Settings](https://colab.research.google.com/drive/1m0tE-V0eJjrbuZabfyzSV892zsvUenhw#scrollTo=bZ4gmzmTwBOF)
+
 ## Features
 - Deep language correction beyond Word's capabilities
 - Fixes grammar, spelling, and improves word choice
