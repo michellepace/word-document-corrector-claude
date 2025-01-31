@@ -1,19 +1,18 @@
 # Word Document Corrector using Claude
 
-A Google Colab notebook that uses Claude 3.5 Sonnet (Anthropic API) to correct Microsoft Word documents beyond Word's inbuilt capabilities. Simply upload your .docx file and get detailed corrections in colour. 
+Corrects large Word documents using `Claude 3.5 Sonnet` at a level that surpasses Microsoft Word. 
+
+Upload any .docx file and see corrections in colour.
+- **Deep language correction** beyond Microsoft Word capabilities.
+- **Corrects** grammar, spelling, and inappropriate word choice in colour.
+- **Large documents** (tested up to 100,000 words, approx. 150 pages).
+- **Multi-language:** English, German, Italian.
+- **Preserves** writting style and semantic meaning.
+- **Comprehensive** testing suite to validate correction integrity.
 
 ## Notebook Usage
 1. Click <a href="https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 1. Then follow these steps in section [Your Settings](https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb#scrollTo=bZ4gmzmTwBOF)
-
-## Features
-- Deep language correction beyond Word's capabilities
-- Fixes grammar, spelling, and improves word choice
-- Handles large documents (up to 300k words)
-- Multi-language support: English, German, French, Italian
-- Colour-coded corrections for easy review
-- Preserves document structure and meaning
-- Comprehensive testing suite to ensure correction integrity
 
 ## Example Files
 To get a view of what corrections this Notebook makes, view the below files. What is interesting too is to open the input file in Word and see how many corrections it missed compared to the Output file from the notebook.
