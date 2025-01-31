@@ -5,10 +5,8 @@ Corrects large Word documents using `Claude 3.5 Sonnet` at a level that surpasse
 Upload any .docx file and see corrections in colour.
 - **Deep language correction** beyond Microsoft Word capabilities.
 - **Corrects** grammar, spelling, and inappropriate word choice in colour.
-- **Large documents** (tested up to 100,000 words, approx. 150 pages).
-- **Multi-language:** English, German, Italian.
 - **Preserves** writting style and semantic meaning.
-- **Comprehensive** testing suite to validate correction integrity.
+- **Comprehensive** testing suite to validate correction integrity (see below).
 
 ## Notebook Usage
 1. Click <a href="https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
