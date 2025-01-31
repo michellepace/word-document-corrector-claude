@@ -1,5 +1,5 @@
-## Notebook Workflow Visualised
-I asked Claude to analyse the code in this notebook and then visualise how it works. Here it is:
+## Solution Diagram
+Generated from notebook code (Claude 3.5 Sonnet).
 
 ```mermaid
 graph TD
