@@ -1,5 +1,5 @@
 ## Solution Diagram
-Generated from notebook code (Claude 3.5 Sonnet).
+Generated from notebook code.
 
 ```mermaid
 graph TD
