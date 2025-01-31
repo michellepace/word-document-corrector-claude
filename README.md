@@ -29,13 +29,18 @@ To get a view of what corrections this Notebook makes, view the below files. Wha
 
 For a visual representation of the workflow, see [notebook-workflow-visualised.md](notebook-workflow-visualised.md).
 
-## Testing Framework
-Includes automated testing for:
-- Document structure preservation
-- Content integrity
-- Semantic similarity
-- Prompt effectiveness
-- Code functionality
+## Testing Suite
+Testing is arranged into three major errors:
+1. **Test Processed Doc:** End-to-end testing, verifying code and prompt.
+1. **Prompt testing (evaluations):** Ensure prompts performs as instructed (uses generated test data).
+1. **Test My Code:** Traditional functional testing for core code components.
+
+For **Test Processed Doc:**
+- The prompt intructs to `"make corrections but retain original meaning"`. 
+- Therefore for each chunk pair (original vs corrected), testing covers:
+  - Content Preservation: Document structure
+  - Content Preservation: Simple Word Count (+/- 5% tolorance)
+  - Content Preservation: Semantic Meaning (scores > 70%)
 
 ## License
 [License.md](License.md)
