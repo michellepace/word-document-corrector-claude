@@ -1,0 +1,61 @@
+# Python + VSCode + Jupyter .gitignore
+# Ignores system files, virtual environments, Python artifacts, testing, 
+# packaging, and Jupyter notebook files
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Temp files
+*.tmp
+*~
+.swp.*
+
+# Log files
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# VSCode IDE
+.vscode/
+*.code-workspace
+.history/
+
+
+# Python development
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Jupyter Notebook specific
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.jupyter/
+.jupyter-server/
