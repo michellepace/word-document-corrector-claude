@@ -1,7 +1,11 @@
 # Word Document Corrector using Claude
 
-A Google Colab notebook that leverages Claude 3.5 Sonnet (Anthropic API) to correct Microsoft Word documents far beyond Word's inbuilt capabilities. Simply upload your .docx file and get detailed corrections in colour. 
+A Google Colab notebook that uses Claude 3.5 Sonnet (Anthropic API) to correct Microsoft Word documents beyond Word's inbuilt capabilities. Simply upload your .docx file and get detailed corrections in colour. 
 
+## Notebook Usage
+1. Click <a href="https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+1. Then follow these steps in section 'Notebook Usage⭐'
+2. 
 ## Features
 - Deep language correction beyond Word's capabilities
 - Fixes grammar, spelling, and improves word choice
@@ -10,10 +14,6 @@ A Google Colab notebook that leverages Claude 3.5 Sonnet (Anthropic API) to corr
 - Colour-coded corrections for easy review
 - Preserves document structure and meaning
 - Comprehensive testing suite to ensure correction integrity
-
-## Notebook Usage
-1. Click <a href="https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-1. Then follow these steps in section 'Notebook Usage⭐'
 
 ## Example Files
 To get a view of what corrections this Notebook makes, view the below files. What is interesting too is to open the input file in Word and see how many corrections it missed compared to the Output file from the notebook.
