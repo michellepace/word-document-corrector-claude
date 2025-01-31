@@ -10,8 +10,8 @@ Corrects large Word documents using `Claude 3.5 Sonnet` at a level that surpasse
 1. Then follow these steps in section [Your Settings](https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb#scrollTo=bZ4gmzmTwBOF)
 
 ## Example Files
-- Uploaded file: [MyWordDoc.docx](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx) - sample Word document with various errors.
-- Output file: [MyWordDoc.docx.PROCESSED.html](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx.PROCESSED.html) - corrected version with changes highlighted.
+- Uploaded file: [MyWordDoc.docx](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx) - Word doc with undetected errors.
+- Output file: [MyWordDoc.docx.PROCESSED.html](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx.PROCESSED.html) - corrected version in colour.
 
 ## Notebook Implementation by Section
 See [solution-diagram](solution-diagram.md):
