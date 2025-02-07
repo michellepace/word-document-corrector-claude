@@ -1,0 +1,125 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Corrected Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0 5%;
+            max-width: 50em;
+            line-height: 1.5em;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 16px;
+            background-color: #F0EFEA;
+            color: #141413;
+        }
+
+        @media (max-width: 768px) { body { padding: 0 3%;}}
+
+        strong { color: #E46264;}
+    </style>
+    
+    </head>
+    <body>
+        <h1>Pushing Aside the Bench for the Mark</h1>
+<p>So, you need to choose an LLM for your product<strong>,</strong> but where do you start? It is an expansive topic, but this article starts at the very basics. By <strong>using the</strong> example of choosing between five Anthropic models, it will prove that you cannot simply depend on benchmarks or marketing. <strong>By</strong> reaching the end, you will understand why it is crucial to measure and compare LLMs against your own use case.</p>
+<h2>Benchmarks Are General</h2>
+<p>When you go to any of the popular benchmark leaderboards<strong>,</strong> it is like you are <strong>looking</strong> at a list of "here are the fastest and most capable athletes." A general athlete is not what you need<strong>;</strong> your use case needs a swimmer. Of course<strong>,</strong> they must be capable, but in what exactly: the quality of their stroke, resilience under pressure, or something else? They need to be fast too<strong>,</strong> but fast in what exactly, 100m backstroke or getting to the pool? It turns out you need an open water swimmer capable of swimming the English Channel, fast. </p>
+<p>This is the essence <strong>of</strong> why you cannot simply make your choice by popular benchmarks. They rank in general, but your use case is never general. Added to this, it is possible to game benchmarks during model training. The waters could be murky.</p>
+<p>The section below will <strong>set up</strong> a <strong>fictitious</strong> (and very simple) example of having to choose between the five Anthropic models. The purpose is to set a way of thinking first and avoid getting lost.</p>
+<h2>Choosing An Anthropic Model</h2>
+<p>Assume that for my use case I need to decide between the following Anthropic models:</p>
+<p>Figure 1: The Anthropic Model Families and the models (or snapshots) we will be testing (blue).</p>
+<p>Looking at the above<strong>,</strong> Claude Sonnet seems to be the easiest choice. And of the two snapshots available, I am sure <strong>(Oct 2024)</strong> must be even better than <strong>(Jun 2024)</strong>. It looks like the best choice<strong>;</strong> the most popular leaderboards point to this too, but is it? </p>
+<p>It depends entirely on your use case. The way to test this is by evaluating or "marking" prompt responses. Not just generic prompts but a set of prompts with representative coverage of your use case. The more coverage you have and the more relevant the prompts, the more confident you will be in choosing a model or justifying a move to the latest version (snapshot). </p>
+<p>For this explanation, I will make evaluating my use case (unrealistically) simple by "marking" model responses on just two prompts: </p>
+<p>Speed Test (prompt 1):</p>
+<ul>
+<li>Explain photosynthesis in a concise paragraph. (max_tokens: 400)</li>
+</ul>
+<p>Capability Test (prompt 2):</p>
+<ul>
+<li>What is the geometric monthly fecal coliform mean of a distribution system with the following FC counts: 24, 15, 7, 16, 31 and 23? The result will be inputted into a NPDES DMR, therefore, round to the nearest whole number.</li>
+</ul>
+<p>As LLMs deal in probabilities, the same prompt can have different responses<strong>,</strong> and of course<strong>,</strong> speed can vary too. For each model, I chose to run each prompt 50 times sequentially for each model (5 x 2 x 50 = 500 runs). </p>
+<p>The results presented were gathered from a full test run done on the 4th of February 2025 at 15:02 UTC. The 500 prompts and their responses finished 16 minutes later.</p>
+<p>The sections that follow visually step through these test results for speed, capability, and cost.</p>
+<h2>Speed Test Results</h2>
+<p>Like measuring typing speed in words per minute, model speed is measured in tokens per second. This measures the total time from sending your prompt request until receiving the response - including both the model's "thinking" time (inference) and the internet journey time. This is the speed your product will experience. See Appendix 1 for the code snippet used.</p>
+<p>Looking at Figure 1 (above), perhaps you are assuming the same as I did:</p>
+<ul>
+<li>Haiku models will be the fastest</li>
+<li>Haiku 3.5 will be faster than Haiku 3.0 (newer is better?)</li>
+</ul>
+<p>But the results proved my assumptions wrong:</p>
+<p>[Figure 2: Haiku 3 is fastest, but Sonnet 3.5 is faster than Haiku 3.5]</p>
+<p>Figure 2 above shows "speed over time" for the speed test prompt that was sent 50 times to each model, sequentially.</p>
+<p>What is most surprising is that the newer Haiku 3.5 was slower than Sonnet 3.5. Also, compared to Opus<strong>,</strong> how unstable the model speeds were.</p>
+<p>Looking at the same result data but in an easier-to-compare format:</p>
+<p>[Figure 3: Speed Individual Dots plot]</p>
+<p>Figure 3 makes the speed differences more apparent. Haiku 3 was the fastest but also the most unstable (notice the vertical spread). Here<strong>,</strong> Haiku 3.5 does appear slower than Sonnet 3.5 (but <strong>this</strong> may not be statistically significant).</p>
+<p>[Figure 4: Speed Summary Table]</p>
+<p>Figure 4 is a full summary of the speed test results. I have chosen the median to compare models because of outliers. </p>
+<p>Now that you understand the easiest <strong>aspect</strong> - testing and comparing speed - we will move on to testing model capability.</p>
+<h2>Capability Test Results</h2>
+<p>Capability is easy to measure when a definitive response is expected, like a math solution or classification. Most frequently<strong>,</strong> you will need to compare textual responses. In this case<strong>,</strong> there are methods, both manual and automated, that can be used to evaluate or "mark" textual responses for comparison. In my opinion, the most promising is using an independent LLM to judge the responses; it can be automated and is more consistent than most people.</p>
+<p>The capability test prompt I used (Figure <strong>5</strong> below) has an exact solution of "18." You can see that even Opus<strong>,</strong> "the most intelligent model<strong>,"</strong> got 6% of its answers wrong:</p>
+<p>Figure: Summary of Capability Results (including all incorrect answers)</p>
+<p>Figure: Unexpectedly<strong>,</strong> the older "Haiku 3" model outperforms its newer model and Sonnet!</p>
+<p>Like speed, the results for my "use case" <strong>contradict</strong> the benchmarks. Sonnet should be outperforming Haiku. And like with speed, both Haiku and Sonnet degraded.</p>
+<p>It is now time to look at what appears to be easier than testing speed: comparing costs. </p>
+<h2>Cost Calculations</h2>
+<p>I used to work in manufacturing <strong>where products were</strong> sold to mines, shipping companies<strong>,</strong> etc. Buyers unconnected to operations on the ground would opt for cheaper suppliers. The cheaper products would fail sooner or require more maintenance. The client would suffer far more costly repercussions<strong>,</strong> but <strong>these were</strong> uncaptured by <strong>quarterly</strong> financial <strong>reports</strong>. Nobody can blame the buyers<strong>,</strong> as everyone likes the look of a low price.</p>
+<p>In the LLM world, most providers price models in "cost per token." However, it is <strong>more</strong> complex than simply comparing token costs because a token is not standardized. For example, Anthropic may tokenize a given sentence as "12 anthropic tokens," where<strong>as</strong> Open AI may tokenize it as "14 Open AI tokens."</p>
+<p>The trick is to first look beyond the quoted price and delve into deeper cost questions. Do you get accurate responses efficiently<strong>,</strong> or does it require multiple back and forth? If the model is hosted, does it get congested<strong>,</strong> and what will this cost your product? Is the API easy and robust to use? Is there solid documentation on prompt engineering practices for the model? <strong>Regarding</strong> privacy, how much is that going to cost if it goes wrong? Only then take the time to standardize and compare token costs.</p>
+<p>Anthropic prices their models in dollars per million tokens ($/MTOK)<strong>,</strong> with input tokens costing more than output tokens. You can see where this is going<strong>:</strong> which price is more important to your use-case<strong>?</strong> And<strong>,</strong> is it possible to cache a prompt<strong>,</strong> and do you pay for it?</p>
+<p>Current Anthropic pricing:</p>
+<p>Figure: Current Anthropic pricing per million tokens ($US).</p>
+<p>It cost $1.85 to run <strong>the</strong> entire test set of 500 prompt requests (2 prompts x 5 models x 50 runs per model). In the detailed breakdown below, the speed tests cost more because a "concise paragraph" was asked for<strong>,</strong> whereas the capability prompt instructed "respond only with a number."</p>
+<p>Figure: Cost breakdown per model for running all speed and capability tests.</p>
+<p>It is obvious now that <strong>while</strong> developing your product at scale, prompts can be optimized for cost efficiency. But first, ensure you look at the whole cost picture in choosing your model.</p>
+<h2>Results Summary</h2>
+<p>The below figure summarizes all the results into one diagram. On the x-axis are the median speed test results (running prompt 1 against each model 50 times). On the y-axis are the capability test results (running prompt 2 against each model 50 times). The size of each circle is the total cost, for both speed and capability tests combined.</p>
+<p>Figure: All Results: Capability vs Speed vs Total Cost</p>
+<p>Comparing the benchmarks and Anthropic's model positioning, when measured against my fictitious use case<strong>,</strong> are the biggest contradictions and remarkable surprises:</p>
+<p>Speed</p>
+<ul>
+<li>"Haiku 3.5 <strong>was claimed to be</strong> our fastest model" — it was not the fastest, Sonnet 3.5 appeared faster. <strong>Both</strong> were dwarfed by the older Haiku 3.</li>
+<li>All newer models and snapshots degraded in speed.</li>
+</ul>
+<p>Capability:</p>
+<ul>
+<li>"Sonnet 3.5 <strong>was claimed to be</strong> our best combination of performance and speed" — it was not for me, Haiku 3 outperformed Sonnet 3.5.</li>
+<li>All newer models and snapshots degraded in capability.</li>
+</ul>
+<p>Cost — most surprising of all:</p>
+<ul>
+<li>Haiku 3 is the fastest with the closest capability to Opus — yet it is the cheapest!</li>
+</ul>
+<p>Again<strong>,</strong> though, please keep in mind that two little test prompts are not enough to draw a conclusion, but neither are general benchmarks. </p>
+<p>What these results prove is that you can expect to find surprises: you need to evaluate against your own use case by testing with use case<strong>-</strong>relevant prompts. </p>
+<h2>Future Proofing</h2>
+<p>You certainly will choose the wrong model<strong>, if</strong> for no other reason <strong>than</strong> that things change rapidly: think <strong>of</strong> DeepSeek-R1 that arrived in January. If the benchmarks are to be believed, it is comparable to Claude Sonnet but at $2.19/MTOK instead of $15! That would make your December decision wrong (ceteris paribus).</p>
+<p>The perfect choice does not matter nearly as much as your ability to adjust from a "wrong" decision. What matters is your ability to evaluate a new model (or model update) against your use case, then to make it easy to switch<strong>,</strong> confidently. </p>
+<p>So deeply consider (A) and (B) below:</p>
+<h3>(A) For evaluating new models:</h3>
+<p>As your product grows, <strong>you</strong> add more prompt evaluations for the prompts used by your product. Now not only do you have the evaluations you started off with in choosing your model, but a growing evaluation set representative of your use case! Strive for these tests to be automated. With a little work, you can run this evaluation set against other models for comparison. </p>
+<p>At DeepSeek-R1's $2.19/MTOK, it is almost too difficult to believe that it could possibly be as good as Claude 3.5 Sonnet. You don't know until you test against your own use case.</p>
+<h3>(B) Making a model switch easier:</h3>
+<p>From the start, at the very least<strong>,</strong> allow your Engineers to invest in an abstraction layer. Get into a room and explain future proofing, explain the story of DeepSeek-R1 where the cost is 1/7th of Sonnet. Go beyond price<strong>;</strong> as a team<strong>,</strong> what will you do when a new model comes out that everyone and the leaderboards are saying is better? What will it take to confidently and easily switch? How are we going to easily run our prompt evaluation suite against a new model? </p>
+<p>The answer you are likely to get is<strong>,</strong> at the very least, <strong>an</strong> abstraction layer that sits between your application's code and LLM API's. You do not need a perfect interchangeable model solution, but there are things that<strong>,</strong> if done with discipline from the start<strong>,</strong> will keep the product rapidly flexible. </p>
+<h2>Conclusion</h2>
+<p>In the real world<strong>,</strong> you cannot use only two prompts to compare models<strong>;</strong> you must strive for good coverage. I think of my product in major segments of LLM tasks. I <strong>emphasize</strong> more segments than others, but within each<strong>,</strong> I strive for coverage by creating relevant test prompts that inject real messy data. When it comes to costs, take the time to research the entire cost picture.</p>
+<p>Once the model is chosen<strong>,</strong> the journey has only started. As your product grows and evolves<strong>,</strong> so too must your prompt evaluation test suite. Today's decision is likely to be wrong tomorrow.</p>
+<p>Benchmarks and marketing are general, your use case is not. Take the time to automate your prompt evaluations. It is an investment that surpasses a quarterly report. You may need to defend this investment but persist. You are giving the best chance of having your product flourish in a rapidly changing landscape, and to perform well along the way.</p>
+<p>And yes, even the product manager must develop a solid understanding of prompting and statistical analysis.</p>
+<h2>Appendix</h2>
+<p>Notebook that runs the test cases:</p>
+    </body>
+    </html>
+    
