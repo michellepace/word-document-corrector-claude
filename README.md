@@ -9,9 +9,15 @@ Corrects large Word documents using `Claude 3.5 Sonnet` at a level that surpasse
 1. Click <a href="https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 1. Then follow these steps in section [Your Settings](https://colab.research.google.com/github/michellepace/word-document-corrector-claude/blob/main/word_document_corrector_claude.ipynb#scrollTo=bZ4gmzmTwBOF)
 
-## Example Files
-- Uploaded file: [MyWordDoc.docx](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx) - Word doc with undetected errors.
-- Output file: [MyWordDoc.docx.PROCESSED.html](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx.PROCESSED.html) - corrected version in colour.
+## Examples of Corrections
+
+**Eg.1 — Draft write-up for this notebook**
+- Upload (.docx): [original draft](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx)
+- Notebook Output: [corrections made that Microsoft Word missed](https://michellepace.github.io/word-document-corrector-claude/example-files/MyWordDoc.docx.PROCESSED.html)
+
+**Eg.2 — Draft article "Pushing Aside the Bench for the Mark"**
+- Upload (.docx): [original draft](https://michellepace.github.io/word-document-corrector-claude/example-files/example_02_article.docx)
+- Notebook output: [corrections made that Microsoft Word missed](https://michellepace.github.io/word-document-corrector-claude/example-files/example_02_article.docx.PROCESSED.html)
 
 ## Notebook Implementation by Section
 See [solution-diagram](solution-diagram.md):
